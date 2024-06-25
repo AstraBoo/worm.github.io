@@ -1,10 +1,23 @@
 window.onload = function() {
+    // Check if the user is on a mobile device
+    if (!isMobileDevice()) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('mobile-only').style.display = 'block'; // Display the mobile-only message
+        return;
+    }
+
     setTimeout(() => {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('game-container').style.display = 'flex';
         startGame();
     }, 1000);
 };
+
+// Function to check if the user is on a mobile device
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
 
 document.getElementById('restartButton').onclick = function() {
     cancelAnimationFrame(animationId); 
