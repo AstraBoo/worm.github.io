@@ -93,3 +93,23 @@ canvas {
   0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-50px); }
 }
+
+#shopButton {
+    margin-top: 20px; /* Отступ сверху, чтобы разместить кнопку ниже */
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 40px; /* Высота кнопки */
+}
+
+#shopButton:hover {
+    background-color: #444;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
