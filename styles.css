@@ -9,6 +9,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: #fff;
+  overflow: hidden; /* Предотвращает прокрутку страницы */
 }
 
 @keyframes gradient {
@@ -29,14 +30,17 @@ body {
 }
 
 #game-container {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  width: 320px; /* Фиксированная ширина контейнера игры */
 }
 
 canvas {
   background-color: #000;
   border: 1px solid #fff;
+  width: 320px; /* Фиксированная ширина canvas */
+  height: 320px; /* Фиксированная высота canvas */
 }
 
 #scoreBoard {
@@ -60,7 +64,7 @@ canvas {
   display: none;
 }
 
-#restartButton, #shopButton, #restartButtonBottom {
+#restartButton {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 18px;
@@ -73,16 +77,9 @@ canvas {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#restartButton:hover, #shopButton:hover, #restartButtonBottom:hover {
+#restartButton:hover {
   background-color: #444;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
-
-#buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
 }
 
 .score-animation {
@@ -95,28 +92,4 @@ canvas {
 @keyframes scoreUp {
   0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-50px); }
-}
-
-#shop {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.shop-item {
-  margin-bottom: 10px;
-  cursor: pointer;
-  padding: 10px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.shop-item:hover {
-  background-color: #444;
 }
